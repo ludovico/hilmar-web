@@ -1,0 +1,28 @@
+:root {
+    --blue: #0e001a;
+    --dark-grey: #707684;
+    --light-grey: #a7b0c1;
+    --gold: #97905c;
+
+    --primary-text-color: var(--dark-grey);
+    --secondary-text-color: var(--gold);
+
+    --primary-bg-color: var(--blue);
+    --secondary-bg-color: var(--light-grey);
+}
+
+.text-primary {
+    color: var(--primary-text-color);
+}
+
+.text-secondary {
+    color: var(--secondary-text-color);
+}
+
+.bg-primary {
+    background-color: var(--primary-bg-color);
+    border-bottom: 5px solid var(--gold);
+}
+.bg-secondary {
+    background-color: var(--secondary-bg-color);
+}

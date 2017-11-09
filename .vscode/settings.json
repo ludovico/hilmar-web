@@ -1,0 +1,24 @@
+{
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "dist/": true,
+        ".vscode/": false,
+        "**/.DS_Store": true
+    },
+    "files.associations": {
+        ".css": "postcss",
+        "*.js": "typescript",
+        "*.jsx": "typescriptreact"
+    },
+    "[typescript]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2
+    },
+    "[typescriptreact]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2
+    }
+}
