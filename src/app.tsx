@@ -5,48 +5,17 @@ import { Store } from 'redux'
 import { Todo } from './store/ducks/todo'
 import { ScreenSizes } from './store/ducks/theme'
 
-const styles = {
-  outerContainer: {
-    display: 'flex',
-    flexDirection: 'column',
-    nav: {
-      height: 100,
-      backgroundColor: 'red',
-      flex: 1
-    },
-    mainContainer: {
-      display: 'flex',
-      flexDirection: 'row'
-    }
-  },
-  md: {
-    outerContainer: {
-      display: 'flex',
-      flexDirection: 'column',
-      nav: {
-        height: 100,
-        backgroundColor: 'green',
-        flex: 1
-      },
-      mainContainer: {
-        display: 'flex',
-        flexDirection: 'row'
-      }
-    }
-  }
-}
-
 interface AppComponentState {
   todos: Todo[],
   screenSize: ScreenSizes
 
 }
 
-export default (store: Store<AppState>): React.Component<any, AppComponentState> => {
-  class App extends React.Component<any, AppComponentState> {
+export default (store: Store<AppState>): React.ComponentClass<{}> => {
+  class App extends React.Component<{}, AppComponentState> {
     private unsubscribe: () => void
 
-    constructor (props: any) {
+    constructor (props: {}) {
       super(props)
 
       console.log(store)
@@ -75,12 +44,11 @@ export default (store: Store<AppState>): React.Component<any, AppComponentState>
 
     render () {
       const links = ['Inbox', 'Next', 'Waiting']
-      const responsiveStyles = this.state.screenSize === 'md' ? styles.md : styles
 
       return (
-        <div style={responsiveStyles.outerContainer}>
-          <div style={responsiveStyles.outerContainer.nav} />
-          <div style={responsiveStyles.outerContainer.mainContainer}>
+        <div>
+          <div />
+          <div>
             <div className={'pure-u-1-5 bg-secondary pure-menu'}>
               <ul className={'pure-menu-list'}>
                 {links.map((link, i) => <li className={'pure-menu-item'}><a className={'pure-menu-link'} href={'#'}>{link}</a></li>)}

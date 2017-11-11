@@ -17,7 +17,7 @@ watchMedia(store)([
   { size: 1600, title: 'xl' }
 ])
 
-const App: React.Component = createApp(store)
+const App = createApp(store)
 
 render(
   <App />,

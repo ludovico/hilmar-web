@@ -4,8 +4,8 @@
   "description": "My personal React template, using the latest libraries",
   "main": "index.js",
   "dependencies": {
-    "@types/react": "^16.0.20",
-    "@types/react-dom": "^16.0.2",
+    "@types/react": "^16.0.22",
+    "@types/react-dom": "^16.0.3",
     "@types/tape": "^4.2.31",
     "babel-preset-env": "^7.0.0-beta.3",
     "compression": "^1.7.1",
@@ -14,8 +14,8 @@
     "express": "^4.16.2",
     "express-history-api-fallback": "^2.2.1",
     "nyc": "^11.3.0",
-    "react": "^16.0.0",
-    "react-dom": "^16.0.0",
+    "react": "^16.1.0",
+    "react-dom": "^16.1.0",
     "source-map-support": "^0.5.0",
     "ts-node": "^3.3.0",
     "tslint": "^5.8.0"
@@ -29,7 +29,7 @@
     "babel-preset-react": "^7.0.0-beta.3",
     "babel-preset-stage-0": "^7.0.0-beta.3",
     "babel-register": "^7.0.0-beta.3",
-    "caniuse-lite": "^1.0.30000758",
+    "caniuse-lite": "^1.0.30000760",
     "clean-webpack-plugin": "^0.1.17",
     "css-loader": "^0.28.7",
     "extract-text-webpack-plugin": "^3.0.2",
@@ -64,10 +64,20 @@
     "build": "webpack --config webpack/config.prod.babel.js",
     "lint": "standard",
     "watch": "tape-watch --require ../tests/babel-ts-register src/**/*.test.js src/**/*.test.jsx src/**/*.test.ts src/**/*.test.tsx --pipe faucet",
-    "test": "nyc npm run watch -- --once"
+    "test": "nyc --all npm run watch -- --once"
   },
   "nyc": {
     "include": [
+      "src/**/*.js",
+      "src/**/*.jsx",
+      "src/**/*.ts",
+      "src/**/*.tsx"
+    ],
+    "exclude": [
+      "node_modules",
+      "webpack",
+      "coverage",
+      "tests",
       "src/**/*.test.js",
       "src/**/*.test.jsx",
       "src/**/*.test.ts",
