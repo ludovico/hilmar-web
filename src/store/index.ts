@@ -11,6 +11,6 @@ export interface AppState {
   theme: ThemeState
 }
 
-const store: Store<AppState> = createStore(combineReducers(reducers))
+const store: Store<AppState> = createStore<AppState>(combineReducers<AppState>(reducers))
 
 export default store

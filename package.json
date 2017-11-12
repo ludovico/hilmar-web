@@ -63,7 +63,7 @@
     "start": "webpack-dev-server --config webpack/config.dev.babel.js",
     "build": "webpack --config webpack/config.prod.babel.js",
     "lint": "standard",
-    "watch": "tape-watch --require ../tests/babel-ts-register src/**/*.test.js src/**/*.test.jsx src/**/*.test.ts src/**/*.test.tsx",
+    "watch": "tape-watch --require ../tests/babel-ts-register 'src/**/*.test.js' 'src/**/*.test.jsx' 'src/**/*.test.ts' 'src/**/*.test.tsx'",
     "test": "nyc --all npm run watch -- --once | tap-nyc"
   },
   "nyc": {

@@ -6,7 +6,7 @@ import Adapter from 'enzyme-adapter-react-16'
 
 configure({ adapter: new Adapter() })
 
-test('Render correct hello message', function (t: test.Test) {
+test('Render correct hello message', (t: test.Test) => {
   const tests = [
     { name: 'Eivind', expected: 'Hello, Eivind!' },
     { name: 'Lisa', expected: 'Hello, Lisa!' },

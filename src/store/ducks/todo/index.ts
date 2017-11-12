@@ -3,7 +3,7 @@ interface ToggleTodo {
   todo: string
 }
 
-type TodoAction = ToggleTodo
+type TodoAction = ToggleTodo | null
 
 export interface TodoState {
   status: 'Idle',
@@ -25,6 +25,10 @@ export type Todo = {
 }
 
 export default (state: TodoState = InitialState, action: TodoAction): TodoState => {
+  if (!action) {
+    return state
+  }
+
   if (action.type === 'SET_TODO_STATE') {
     const todoIndex = state.todos.findIndex((todo) => todo.title === action.todo)
     return {

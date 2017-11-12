@@ -5,5 +5,10 @@
  *  export { default as [ReducerName]} from '[Duck]'
  */
 
-export { default as todos } from './todo'
-export { default as theme } from './theme'
+import todos from './todo'
+import theme from './theme'
+
+export default {
+  todos,
+  theme
+}
