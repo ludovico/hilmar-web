@@ -6,6 +6,8 @@
         "**/CVS": true,
         "dist/": true,
         ".vscode/": false,
+        ".nyc_output/": true,
+        "coverage/": true,
         "**/.DS_Store": true
     },
     "files.associations": {
