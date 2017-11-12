@@ -93,6 +93,7 @@
       "./tests/babel-ts-register"
     ],
     "reporter": [
+      "lcov",
       "text-summary",
       "html"
     ],
