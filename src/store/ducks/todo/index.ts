@@ -3,7 +3,7 @@ interface ToggleTodo {
   todo: string
 }
 
-type TodoAction = ToggleTodo | null
+export type TodoAction = ToggleTodo | null
 
 export interface TodoState {
   status: 'Idle',
