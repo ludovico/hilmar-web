@@ -1,30 +1,20 @@
 import test from 'tape'
-import TodoReducer, { Todo, TodoAction, TodoState } from '.'
+import sinon from 'sinon'
 
-test('Returns initial state upon unrecognized Action type', (t: test.Test) => {
-  t.plan(1)
+import TodoReducer, { Todo, TodoAction, TodoState, toggleState } from '.'
 
-  const initialState: TodoState = {
-    status: 'Idle',
-    todos: []
-  }
+test('TodoReducer tests', (t: test.Test) => {
+  t.plan(2)
 
-  t.equal(TodoReducer(initialState, null), initialState)
+  const todo: Todo = { title: 'test', done: true }
 
-})
-
-test('Toggle todo', (t: test.Test) => {
-  t.plan(1)
-
-  const todo: Todo = { title: 'Todo 1', done: true }
-
-  const initialState: TodoState = {
+  const initial: TodoState = {
     status: 'Idle',
     todos: [todo]
   }
 
-  const expectedState: TodoState = {
-    status: 'Idle',
+  const expected: TodoState = {
+    ...initial,
     todos: [{ ...todo, done: !todo.done }]
   }
 
@@ -33,8 +23,28 @@ test('Toggle todo', (t: test.Test) => {
     todo: todo.title
   }
 
-  const resultState = TodoReducer(initialState, action)
+  const result = TodoReducer(initial, action)
 
-  t.deepEqual(resultState, expectedState)
+  t.equal(TodoReducer(initial, null), initial, 'Should return state')
 
+  t.deepEqual(result, expected, 'Should toggle the todo status')
+
+})
+
+test('TodoReducer actions tests', (t: test.Test) => {
+  const storeSpy = {
+    dispatch: sinon.spy()
+  }
+
+  const todoTitle = 'test title'
+  const action: TodoAction = {
+    type: 'SET_TODO_STATE',
+    todo: todoTitle
+  }
+
+  toggleState(todoTitle, storeSpy)
+
+  t.plan(1)
+
+  t.ok(storeSpy.dispatch.calledWith(action))
 })
