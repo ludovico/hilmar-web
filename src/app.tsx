@@ -18,7 +18,6 @@ export default (store: Store<AppState>): React.ComponentClass<{}> => {
     constructor (props: {}) {
       super(props)
 
-      console.log(store)
       this.state = {
         todos: store.getState().todos.todos,
         screenSize: store.getState().theme.screenSize

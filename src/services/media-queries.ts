@@ -21,7 +21,6 @@ export default store => (queries: Query[] = []) => {
       : '(max-width: ' + q.size + 'px)'
 
     const mql = window.matchMedia(queryString)
-    console.log(queryString)
 
     mql.addListener(mediaQueryList => {
       if (mql.matches) {
