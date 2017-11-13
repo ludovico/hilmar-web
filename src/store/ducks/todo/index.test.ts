@@ -23,9 +23,14 @@ test('TodoReducer tests', (t: test.Test) => {
     todo: todo.title
   }
 
+  const nonExistingTodoAction = {
+    ...action,
+    todo: 'dummy todo'
+  }
+
   const result = TodoReducer(initial, action)
 
-  t.equal(TodoReducer(initial, null), initial, 'Should return state')
+  t.equal(TodoReducer(initial, nonExistingTodoAction), initial, 'Should return state')
 
   t.deepEqual(result, expected, 'Should toggle the todo status')
 

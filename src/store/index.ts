@@ -2,7 +2,7 @@
 import { createStore, combineReducers, Store } from 'redux'
 
 // Internal files
-import * as reducers from './ducks'
+import reducers from './ducks'
 import { TodoState } from './ducks/todo'
 import { ThemeState } from './ducks/theme'
 

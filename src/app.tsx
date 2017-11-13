@@ -50,14 +50,14 @@ export default (store: Store<AppState>): React.ComponentClass<{}> => {
           <div>
             <div className={'pure-u-1-5 bg-secondary pure-menu'}>
               <ul className={'pure-menu-list'}>
-                {links.map((link, i) => <li className={'pure-menu-item'}><a className={'pure-menu-link'} href={'#'}>{link}</a></li>)}
+                {links.map((link, i) => <li key={'link' + i} className={'pure-menu-item'}><a className={'pure-menu-link'} href={'#'}>{link}</a></li>)}
               </ul>
             </div>
             <div className={'pure-u-4-5'}>
               <div>
                 <h1 className={'color-primary'}>{this.state.screenSize}</h1>
                 <ul>
-                  {this.state.todos.map((todo, i) => <li><a href={'#'} onClick={(e) => {
+                  {this.state.todos.map((todo, i) => <li key={'todo' + i}><a href={'#'} onClick={(e) => {
                     e.preventDefault()
                     this.handleClick(todo.title)
                   }} style={{ textDecoration: todo.done ? 'line-through' : 'none' }}>{todo.title}</a></li>)}
