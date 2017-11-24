@@ -1,9 +1,13 @@
 import * as React from 'react'
-import { toggleState } from 'store/ducks/todo'
+import { Todo, toggleState } from 'store/ducks/todo'
 import { AppState } from 'store'
 import { Store } from 'redux'
-import { Todo } from './store/ducks/todo'
+import Hello from 'components/hello'
 import { ScreenSizes } from './store/ducks/theme'
+
+// All other styles collected here
+require('styles/reboot.css')
+require('flexboxgrid/dist/flexboxgrid.css')
 
 interface AppComponentState {
   todos: Todo[],
@@ -45,26 +49,28 @@ export default (store: Store<AppState>): React.ComponentClass<{}> => {
       const links = ['Inbox', 'Next', 'Waiting']
 
       return (
-        <div>
-          <div />
-          <div>
-            <div className={'pure-u-1-5 bg-secondary pure-menu'}>
+        <div className={'container'} >
+        <div className={'row'} >
+          <div className={'col-xs-5'}>
+            <div className={'box'}>
               <ul className={'pure-menu-list'}>
                 {links.map((link, i) => <li key={'link' + i} className={'pure-menu-item'}><a className={'pure-menu-link'} href={'#'}>{link}</a></li>)}
               </ul>
             </div>
-            <div className={'pure-u-4-5'}>
-              <div>
-                <h1 className={'color-primary'}>{this.state.screenSize}</h1>
-                <ul>
-                  {this.state.todos.map((todo, i) => <li key={'todo' + i}><a href={'#'} onClick={(e) => {
-                    e.preventDefault()
-                    this.handleClick(todo.title)
-                  }} style={{ textDecoration: todo.done ? 'line-through' : 'none' }}>{todo.title}</a></li>)}
-                </ul>
-              </div>
+          </div>
+          <div className={'pure-u-4-5'}>
+            <div>
+              <Hello name={'Julius'} />
+              <h1 className={'color-primary'}>{this.state.screenSize}</h1>
+              <ul>
+                {this.state.todos.map((todo, i) => <li key={'todo' + i}><a href={'#'} onClick={(e) => {
+                  e.preventDefault()
+                  this.handleClick(todo.title)
+                }} style={{ textDecoration: todo.done ? 'line-through' : 'none' }}>{todo.title}</a></li>)}
+              </ul>
             </div>
           </div>
+        </div>
         </div>
       )
     }

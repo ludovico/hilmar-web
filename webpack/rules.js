@@ -16,14 +16,45 @@ export default [
       }
     }
   }, {
-    // CSS and SASS loaders
-    test: /\.s?css$/,
+    test: /\.css$/,
+    include: [/src\/styles\//, /node_modules\//],
     use: [
       {
         loader: 'style-loader', options: { sourceMap: true }
       },
       {
-        loader: 'css-loader', options: { sourceMap: true }
+        loader: 'css-loader',
+        options: {
+          sourceMap: true
+        }
+      },
+      {
+        loader: 'postcss-loader',
+        options: {
+          sourceMap: true,
+          plugins: function () {
+            require('precss')
+            require('postcss-cssnext')
+            require('autoprefixer')
+          }
+        }
+      }
+    ]
+  }, {
+    // CSS and SASS loaders
+    test: /\.css$/,
+    exclude: [/src\/styles\//, /node_modules\//],
+    use: [
+      {
+        loader: 'style-loader', options: { sourceMap: true }
+      },
+      {
+        loader: 'typings-for-css-modules-loader',
+        options: {
+          sourceMap: true,
+          modules: true,
+          namedExport: true
+        }
       },
       {
         loader: 'postcss-loader',

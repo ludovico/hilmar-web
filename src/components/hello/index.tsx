@@ -1,4 +1,5 @@
 import * as React from 'react'
+import * as s from './hello.css'
 
 export default ({ name }) => {
   if (name === 'Roar') {
@@ -12,7 +13,7 @@ export default ({ name }) => {
 
   return (
     <div>
-      <h1>{'Hello, ' + name + '!'}</h1>
+      <h1 className={[s.title, 'float-left'].join(' ')}>{'Hello, ' + name + '!'}</h1>
     </div>
   )
 }
