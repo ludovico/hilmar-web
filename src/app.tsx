@@ -6,7 +6,7 @@ import Hello from 'components/hello'
 import { ScreenSizes } from './store/ducks/theme'
 
 // All other styles collected here
-require('styles/reboot.css')
+require('styles/main.css')
 require('flexboxgrid/dist/flexboxgrid.css')
 
 interface AppComponentState {
@@ -52,13 +52,11 @@ export default (store: Store<AppState>): React.ComponentClass<{}> => {
         <div className={'container'} >
         <div className={'row'} >
           <div className={'col-xs-5'}>
-            <div className={'box'}>
-              <ul className={'pure-menu-list'}>
-                {links.map((link, i) => <li key={'link' + i} className={'pure-menu-item'}><a className={'pure-menu-link'} href={'#'}>{link}</a></li>)}
-              </ul>
-            </div>
+            <ul className={''}>
+              {links.map((link, i) => <li key={'link' + i} className={'pure-menu-item'}><a className={'pure-menu-link'} href={'#'}>{link}</a></li>)}
+            </ul>
           </div>
-          <div className={'pure-u-4-5'}>
+          <div className={''}>
             <div>
               <Hello name={'Julius'} />
               <h1 className={'color-primary'}>{this.state.screenSize}</h1>
