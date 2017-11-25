@@ -1,3 +1,27 @@
 .title {
-    color: rebeccapurple;
+    color: var(--gold);
+}
+
+@media (min-width: 400px) {
+    .title {
+        color: var(--blue);
+    }
+}
+
+@media (min-width: 700px) {
+    .title {
+        color: var(--gold);
+    }
+}
+
+@media (min-width: 1000px) {
+    .title {
+        color: var(--blue);
+    }
+}
+
+@media (min-width: 1200px) {
+    .title {
+        color: var(--gold);
+    }
 }

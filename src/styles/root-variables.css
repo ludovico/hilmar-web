@@ -9,6 +9,11 @@
 
     --primary-bg-color: var(--blue);
     --secondary-bg-color: var(--light-grey);
+
+    --screen-sm: 400px;
+    --screen-md: 700px;
+    --screen-lg: 1000px;
+    --screen-xs: 1200px;
 }
 
 .text-primary {
