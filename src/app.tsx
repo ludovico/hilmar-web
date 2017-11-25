@@ -53,7 +53,9 @@ export default (store: Store<AppState>): React.ComponentClass<{}> => {
         <div className={'row'} >
           <div className={'col-xs-5'}>
             <ul className={''}>
-              {links.map((link, i) => <li key={'link' + i} className={'pure-menu-item'}><a className={'pure-menu-link'} href={'#'}>{link}</a></li>)}
+              {links.map((link, i) => <li key={'link' + i} className={''}>
+                <a className={''} href={'#'}>{link}</a>
+              </li>)}
             </ul>
           </div>
           <div className={''}>
