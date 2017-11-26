@@ -1,3 +1,8 @@
+@custom-media --screen-sm (min-width: 400px);
+@custom-media --screen-md (min-width: 700px);
+@custom-media --screen-lg (min-width: 1000px);
+@custom-media --screen-xl (min-width: 1200px);
+
 :root {
     --blue: #0e001a;
     --dark-grey: #707684;
@@ -9,25 +14,4 @@
 
     --primary-bg-color: var(--blue);
     --secondary-bg-color: var(--light-grey);
-
-    --screen-sm: 400px;
-    --screen-md: 700px;
-    --screen-lg: 1000px;
-    --screen-xs: 1200px;
-}
-
-.text-primary {
-    color: var(--primary-text-color);
-}
-
-.text-secondary {
-    color: var(--secondary-text-color);
-}
-
-.bg-primary {
-    background-color: var(--primary-bg-color);
-    border-bottom: 5px solid var(--gold);
-}
-.bg-secondary {
-    background-color: var(--secondary-bg-color);
 }

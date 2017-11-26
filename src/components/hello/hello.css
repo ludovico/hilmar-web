@@ -1,26 +1,29 @@
+@import '../../styles/root-variables.css';
+
+
 .title {
     color: var(--gold);
 }
 
-@media (min-width: 400px) {
+@media (--screen-sm) {
     .title {
         color: var(--blue);
     }
 }
 
-@media (min-width: 700px) {
+@media (--screen-md) {
     .title {
         color: var(--gold);
     }
 }
 
-@media (min-width: 1000px) {
+@media (--screen-lg) {
     .title {
         color: var(--blue);
     }
 }
 
-@media (min-width: 1200px) {
+@media (--screen-xl) {
     .title {
         color: var(--gold);
     }

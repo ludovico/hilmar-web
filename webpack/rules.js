@@ -32,16 +32,16 @@ export default [
         loader: 'postcss-loader',
         options: {
           sourceMap: true,
-          plugins: function () {
-            require('precss')
-            require('postcss-cssnext')
-            require('autoprefixer')
-          }
+          plugins: [
+            require('precss')({}),
+            require('postcss-cssnext')({}),
+            require('postcss-custom-media')({}),
+            require('autoprefixer')({})
+          ]
         }
       }
     ]
   }, {
-    // CSS and SASS loaders
     test: /\.css$/,
     exclude: [/src\/styles\//, /node_modules\//],
     use: [
@@ -52,19 +52,19 @@ export default [
         loader: 'typings-for-css-modules-loader',
         options: {
           sourceMap: true,
-          modules: true,
-          namedExport: true
+          modules: true
         }
       },
       {
         loader: 'postcss-loader',
         options: {
           sourceMap: true,
-          plugins: function () {
-            require('precss')
-            require('postcss-cssnext')
-            require('autoprefixer')
-          }
+          plugins: [
+            require('precss')({}),
+            require('postcss-cssnext')({}),
+            require('postcss-custom-media')({}),
+            require('autoprefixer')({})
+          ]
         }
       }
     ]
