@@ -1,10 +1,10 @@
 import * as React from 'react'
 import * as s from './hello.css'
 
-export default ({ name }) => {
+export default ({ name, className }) => {
   if (name === 'Roar') {
     return (
-      <div>
+      <div className={className}>
         <h1>{'Go to bed, ' + name + '...'}</h1>
       </div>
     )
@@ -12,7 +12,7 @@ export default ({ name }) => {
   }
 
   return (
-    <div>
+    <div className={className}>
       <h1 className={[s.title, 'float-left'].join(' ')}>{'Hello, ' + name + '!'}</h1>
     </div>
   )

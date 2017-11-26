@@ -4,10 +4,7 @@ import { AppState } from 'store'
 import { Store } from 'redux'
 import Hello from 'components/hello'
 import { ScreenSizes } from './store/ducks/theme'
-
-// All other styles collected here
-require('styles/main.css')
-require('flexboxgrid/dist/flexboxgrid.css')
+import * as styles from './app.css'
 
 interface AppComponentState {
   todos: Todo[],
@@ -50,27 +47,17 @@ export default (store: Store<AppState>): React.ComponentClass<{}> => {
 
       return (
         <div className={'container'} >
-        <div className={'row'} >
-          <div className={'col-xs-5'}>
+          {/* <div className={'col-xs-5'}>
             <ul className={''}>
               {links.map((link, i) => <li key={'link' + i} className={''}>
                 <a className={''} href={'#'}>{link}</a>
               </li>)}
             </ul>
+          </div> */}
+
+          <div className={['row', styles.topnav].join(' ')} >
+              <Hello className={styles.hello} name={'Julius'} />
           </div>
-          <div className={''}>
-            <div>
-              <Hello name={'Julius'} />
-              <h1 className={'color-primary'}>{this.state.screenSize}</h1>
-              <ul>
-                {this.state.todos.map((todo, i) => <li key={'todo' + i}><a href={'#'} onClick={(e) => {
-                  e.preventDefault()
-                  this.handleClick(todo.title)
-                }} style={{ textDecoration: todo.done ? 'line-through' : 'none' }}>{todo.title}</a></li>)}
-              </ul>
-            </div>
-          </div>
-        </div>
         </div>
       )
     }
