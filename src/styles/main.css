@@ -8,5 +8,5 @@ html, body, #root {
 }
 
 body {
-  background-color: #dddddd;
+  background-color: var(--main-bg-color);
 }

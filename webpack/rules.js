@@ -35,8 +35,7 @@ export default [
           plugins: [
             require('precss')({}),
             require('postcss-cssnext')({}),
-            require('postcss-custom-media')({}),
-            require('autoprefixer')({})
+            require('postcss-custom-media')({})
           ]
         }
       }
@@ -62,8 +61,7 @@ export default [
           plugins: [
             require('precss')({}),
             require('postcss-cssnext')({}),
-            require('postcss-custom-media')({}),
-            require('autoprefixer')({})
+            require('postcss-custom-media')({})
           ]
         }
       }

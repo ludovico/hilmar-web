@@ -4,14 +4,13 @@
 @custom-media --screen-xl (min-width: 1200px);
 
 :root {
-    --blue: #0e001a;
-    --dark-grey: #707684;
-    --light-grey: #a7b0c1;
-    --gold: #97905c;
+    --phthalo-green: #122c34;
+    --st-patricks-blue: #224870;
+    --bdazzled-blude: #2a4494;
+    --carolina-blue: #4ea5d9;
+    --medium-turquoise: #44cfcb;
 
-    --primary-text-color: var(--dark-grey);
-    --secondary-text-color: var(--gold);
-
-    --primary-bg-color: var(--blue);
-    --secondary-bg-color: var(--light-grey);
+    --main-text-color: var(--phthalo-green);
+    --main-bg-color: white;
+    --main-brand-color: var(--st-patricks-blue);
 }
